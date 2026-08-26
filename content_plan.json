@@ -1,144 +1,84 @@
 {
-  "lessons": [
+  "topics": [
     {
-      "chapter": 5,
-      "part": 1,
-      "title": "NLP: Teaching AI to Understand and Talk Like Us",
-      "status": "complete",
-      "youtube_id": "6o4R-dsD7HQ"
+      "topic": "The 4 Attachment Styles — Which One Are You? (Psychology Explained)",
+      "status": "pending"
     },
     {
-      "chapter": 5,
-      "part": 2,
-      "title": "LLMs: AI's Super-Powered Storytellers and Problem Solvers",
-      "status": "complete",
-      "youtube_id": "Saok3rWi_fw"
+      "topic": "Why You Procrastinate (And How to Stop) — The Psychology Behind It",
+      "status": "pending"
     },
     {
-      "chapter": 5,
-      "part": 3,
-      "title": "Prompt Engineering: How to Ask AI the Right Questions for Amazing Answers",
-      "status": "complete",
-      "youtube_id": "r1W4dCG0Dxk"
+      "topic": "Introvert vs Extrovert — The Science Behind Your Personality",
+      "status": "pending"
     },
     {
-      "chapter": 5,
-      "part": 4,
-      "title": "Tokenization & Embeddings: AI Breaking Down Words and Finding Their Meaning",
-      "status": "complete",
-      "youtube_id": "VWPFzMAnGG0"
+      "topic": "What Your Anger Is Really Trying to Tell You (Psychology Facts)",
+      "status": "pending"
     },
     {
-      "chapter": 5,
-      "part": 5,
-      "title": "The Transformer: The AI Engine That Reads and Writes Like Never Before (Intro)",
-      "status": "complete",
-      "youtube_id": "drBSbRjq0D0"
+      "topic": "The Psychology of People-Pleasing — Why You Do It and How to Stop",
+      "status": "pending"
     },
     {
-      "chapter": 6,
-      "part": 1,
-      "title": "Attention Mechanism: How AI Chooses What to Focus On (Transformers Deep Dive)",
-      "status": "complete",
-      "youtube_id": "Aoa8LHbInWI"
+      "topic": "10 Signs of a Toxic Relationship — Psychology Facts You Need to Know",
+      "status": "pending"
     },
     {
-      "chapter": 6,
-      "part": 2,
-      "title": "Fine-tuning LLMs: Turning a General AI into Your Expert Assistant",
-      "status": "complete",
-      "youtube_id": "Q3l92NQlrv8"
+      "topic": "How to Set Boundaries With Family (Without Feeling Guilty) — Psychology Tips",
+      "status": "pending"
     },
     {
-      "chapter": 6,
-      "part": 3,
-      "title": "Vector Databases: Storing and Finding AI's Memories in a Flash",
-      "status": "complete",
-      "youtube_id": "7skS7D0heIE"
+      "topic": "Why You Attract the Wrong Partners — Relationship Psychology Explained",
+      "status": "pending"
     },
     {
-      "chapter": 6,
-      "part": 4,
-      "title": "Retrieval Augmented Generation (RAG): AI That Uses Its Brain AND Its Books",
-      "status": "complete",
-      "youtube_id": "VEoFjHLOmlo"
+      "topic": "The Psychology of Arranged Marriages — Indian Context Explained",
+      "status": "pending"
     },
     {
-      "chapter": 6,
-      "part": 5,
-      "title": "Building a RAG Application: Creating Your Own Smart AI Assistant with External Data",
-      "status": "pending",
-      "youtube_id": null
+      "topic": "Love Languages Explained Simply — The Psychology of How We Give and Receive Love",
+      "status": "pending"
     },
     {
-      "chapter": 7,
-      "part": 1,
-      "title": "Agent Frameworks: Giving Your AI a \"Brain\" and Tools to Think and Act",
-      "status": "pending",
-      "youtube_id": null
+      "topic": "Dark Psychology Tricks Manipulators Use — How to Protect Yourself",
+      "status": "pending"
     },
     {
-      "chapter": 7,
-      "part": 2,
-      "title": "Advanced Tool Use: Equipping Your AI with Custom Superpowers via LangChain",
-      "status": "pending",
-      "youtube_id": null
+      "topic": "The Science of Persuasion — Why You Agree Before Your Brain Finishes Thinking",
+      "status": "pending"
     },
     {
-      "chapter": 7,
-      "part": 3,
-      "title": "Agent Reasoning & Planning: How AI Breaks Down Problems and Solves Them Step-by-Step",
-      "status": "pending",
-      "youtube_id": null
+      "topic": "Dopamine, Discipline, and Motivation — The Brain's Secret to Success",
+      "status": "pending"
     },
     {
-      "chapter": 7,
-      "part": 4,
-      "title": "LangGraph: Designing AI That Thinks in Steps and Reacts to Changes",
-      "status": "pending",
-      "youtube_id": null
+      "topic": "Why Your Brain Wants You to Stay Comfortable (And How to Break Free)",
+      "status": "pending"
     },
     {
-      "chapter": 7,
-      "part": 5,
-      "title": "Building Complex Agent Applications: Orchestrating an AI Team for Big Projects",
-      "status": "pending",
-      "youtube_id": null
+      "topic": "How to Read People — 5 Psychology Tricks That Actually Work",
+      "status": "pending"
     },
     {
-      "chapter": 8,
-      "part": 1,
-      "title": "RLHF: Teaching AI What We Really Want (The Secret Behind Amazing LLMs)",
-      "status": "pending",
-      "youtube_id": null
+      "topic": "Why Willpower Doesn't Exist — The Neuroscience of Self-Control",
+      "status": "pending"
     },
     {
-      "chapter": 8,
-      "part": 2,
-      "title": "Beyond the Transformer: Glimpsing AI's Next Brain Designs (Mixture of Experts)",
-      "status": "pending",
-      "youtube_id": null
+      "topic": "Ego, Identity, and Self-Control — The Hidden Battle in Your Brain",
+      "status": "pending"
     },
     {
-      "chapter": 8,
-      "part": 3,
-      "title": "Multi-Modal AI: AI That Understands More Than Just Words (Images, Audio, Video)",
-      "status": "pending",
-      "youtube_id": null
+      "topic": "Mental Clarity: How to Stop Overthinking and Find Peace — Brain Science",
+      "status": "pending"
     },
     {
-      "chapter": 8,
-      "part": 4,
-      "title": "Designing Scalable AI Systems: Building AI That Can Grow with Your Ambitions",
-      "status": "pending",
-      "youtube_id": null
+      "topic": "Why You Self-Sabotage (And How to Stop) — The Psychology of Self-Destruction",
+      "status": "pending"
     },
     {
-      "chapter": 8,
-      "part": 5,
-      "title": "The Future of AI: What's Next for Autonomous Agents and Intelligent Systems",
-      "status": "pending",
-      "youtube_id": null
+      "topic": "The 2-Minute Rule for Productivity — Psychology Explained",
+      "status": "pending"
     }
   ]
 }
