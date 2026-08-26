@@ -21,10 +21,30 @@ OUTPUT_DIR = Path("output")
 LESSONS_PER_RUN = 1
 
 def get_content_plan():
-    # ... (unchanged from original) ...
+    if not CONTENT_PLAN_FILE.exists():
+        print("📄 content_plan.json not found. Generating new plan...")
+        new_plan = generate_curriculum()
+        with open(CONTENT_PLAN_FILE, 'w') as f:
+            json.dump(new_plan, f, indent=2)
+        print(f"✅ New curriculum saved to {CONTENT_PLAN_FILE}")
+        return new_plan
+    else:
+        try:
+            with open(CONTENT_PLAN_FILE, 'r') as f:
+                plan = json.load(f)
+            if not plan.get("lessons") or not isinstance(plan["lessons"], list):
+                raise ValueError("⚠️ Invalid or empty lesson plan detected.")
+            return plan
+        except Exception as e:
+            print(f"❌ ERROR loading existing plan: {e}. Regenerating...")
+            new_plan = generate_curriculum()
+            with open(CONTENT_PLAN_FILE, 'w') as f:
+                json.dump(new_plan, f, indent=2)
+            return new_plan
 
 def update_content_plan(plan):
-    # ... (unchanged) ...
+    with open(CONTENT_PLAN_FILE, 'w') as f:
+        json.dump(plan, f, indent=2)
 
 def produce_lesson_videos(lesson):
     """
@@ -132,7 +152,6 @@ def produce_lesson_videos(lesson):
         "hashtags": hashtags
     }
 
-
 def main():
     print("🚀 Starting Autonomous AI Course Generator")
     print(f"📁 Current working dir: {os.getcwd()}")
@@ -228,7 +247,7 @@ def main():
             print("To enable automatic uploads, follow these steps:")
             print("1. Go to Google Cloud Console and enable YouTube Data API v3.")
             print("2. Create an OAuth 2.0 Client ID and download the credentials JSON.")
-            print(f"3. Save it as '{upload_status.get('file', 'credentials.json')}' in the project root.")
+            print("3. Save it as 'credentials.json' in the project root.")
             print("4. Run the pipeline again — it will upload automatically.")
             print("="*60)
 
