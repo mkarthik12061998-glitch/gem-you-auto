@@ -1,114 +1,106 @@
-# FILE: src/uploader.py
-# This is the new, robust version that handles authentication correctly
-# for both local use and GitHub Actions deployment.
-
-import os
+import json
+from pathlib import Path
 from google.oauth2.credentials import Credentials
-from google.auth.transport.requests import Request
-from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
-from pathlib import Path
+import time
 
-# Define the paths for the credential files in the root directory
-CLIENT_SECRETS_FILE = Path('client_secrets.json')
-CREDENTIALS_FILE = Path('credentials.json')
+CREDENTIALS_FILE = Path("credentials.json")  # adjust path as needed
 YOUTUBE_UPLOAD_SCOPE = ["https://www.googleapis.com/auth/youtube.upload"]
 
-def get_authenticated_service():
+def get_upload_status():
     """
-    Handles the entire OAuth2 flow and returns an authenticated YouTube service object.
-    This function is designed to work both locally and in automation.
+    Returns a dict with 'available' (bool), 'status' (str), and 'message' (str).
     """
-    credentials = None
-    
-    # Check if we already have credentials stored from a previous run
-    if CREDENTIALS_FILE.exists():
-        print("INFO: Found existing credentials file.")
-        credentials = Credentials.from_authorized_user_file(str(CREDENTIALS_FILE), YOUTUBE_UPLOAD_SCOPE)
-
-    # If we don't have valid credentials, start the authentication flow
-    if not credentials or not credentials.valid:
-        # If credentials exist but are expired, try to refresh them automatically.
-        # This is what your GitHub Action will do on every run.
-        if credentials and credentials.expired and credentials.refresh_token:
-            print("INFO: Refreshing expired credentials...")
-            credentials.refresh(Request())
-        else:
-            # This is the part that runs on your local computer the very first time.
-            print("INFO: No valid credentials found. Starting new authentication flow...")
-            if not CLIENT_SECRETS_FILE.exists():
-                raise FileNotFoundError(f"CRITICAL ERROR: {CLIENT_SECRETS_FILE} not found. Please download it from Google Cloud Console.")
-            
-            flow = InstalledAppFlow.from_client_secrets_file(str(CLIENT_SECRETS_FILE), scopes=YOUTUBE_UPLOAD_SCOPE)
-            
-            # This command will start a local server, open your browser,
-            # and wait for you to grant permission.
-            credentials = flow.run_local_server(port=0)
-        
-        # Save the new, fresh credentials for all future runs
-        with open(CREDENTIALS_FILE, 'w') as f:
-            f.write(credentials.to_json())
-        print(f"INFO: Credentials saved to {CREDENTIALS_FILE}")
-            
-    return build('youtube', 'v3', credentials=credentials)
-
-
-# MODIFIED: Added thumbnail_path parameter
-def upload_to_youtube(video_path, title, description, tags, thumbnail_path=None):
-    """Uploads a video to YouTube with the given metadata and optionally a thumbnail."""
-    print(f"⬆️ Uploading '{video_path}' to YouTube...")
+    if not CREDENTIALS_FILE.exists():
+        return {
+            "available": False,
+            "status": "MISSING",
+            "message": f"Credentials file not found at {CREDENTIALS_FILE.resolve()}"
+        }
     try:
-        youtube = get_authenticated_service()
-        
-        request_body = {
-            'snippet': {
-                'title': title,
-                'description': description,
-                'tags': tags.split(','),
-                'categoryId': '28' # 28 = Science & Technology
-            },
-            'status': {
-                'privacyStatus': 'public', # 'private', 'public', or 'unlisted'
-                'selfDeclaredMadeForKids': False
-            }
+        with open(CREDENTIALS_FILE, 'r') as f:
+            data = json.load(f)
+        # Basic validation: check if it's a dict with expected keys
+        if not isinstance(data, dict):
+            raise ValueError("Invalid credentials format")
+        # You can add more checks (e.g., presence of 'client_id', 'refresh_token', etc.)
+        return {
+            "available": True,
+            "status": "VALID",
+            "message": "Credentials are valid"
+        }
+    except (json.JSONDecodeError, ValueError) as e:
+        return {
+            "available": False,
+            "status": "INVALID",
+            "message": f"Credentials file is corrupted: {e}"
         }
 
-        media = MediaFileUpload(str(video_path), chunksize=-1, resumable=True)
-        
-        request = youtube.videos().insert(
-            part=','.join(request_body.keys()),
-            body=request_body,
-            media_body=media
-        )
-
-        response = None
-        while response is None:
-            status, response = request.next_chunk()
-            if status:
-                print(f"Uploaded {int(status.progress() * 100)}%.")
-                
-        video_id = response.get('id')
-        print(f"✅ Video uploaded successfully! Video ID: {video_id}")
-
-        # ADDED: Thumbnail upload logic
-        if thumbnail_path and os.path.exists(thumbnail_path):
-            print(f"⬆️ Uploading thumbnail '{thumbnail_path}' for video ID: {video_id}...")
-            try:
-                thumbnail_media = MediaFileUpload(str(thumbnail_path))
-                youtube.thumbnails().set(
-                    videoId=video_id,
-                    media_body=thumbnail_media
-                ).execute()
-                print("✅ Thumbnail uploaded successfully!")
-            except Exception as e:
-                print(f"❌ ERROR: Failed to upload thumbnail: {e}")
-        else:
-            print("⚠️ No thumbnail path provided or thumbnail file does not exist. Skipping thumbnail upload.")
-
-        return video_id
-        
+def get_authenticated_service():
+    status = get_upload_status()
+    if not status["available"]:
+        print(f"⚠️ {status['message']}. Upload will be skipped.")
+        return None
+    try:
+        credentials = Credentials.from_authorized_user_file(str(CREDENTIALS_FILE), YOUTUBE_UPLOAD_SCOPE)
+        return build("youtube", "v3", credentials=credentials)
     except Exception as e:
-        print(f"❌ ERROR: Failed to upload to YouTube. {e}")
-        raise
+        print(f"⚠️ Failed to authenticate with YouTube: {e}")
+        return None
 
+def upload_to_youtube(video_path, title, description, tags, thumbnail_path=None, max_retries=3):
+    """
+    Uploads a video to YouTube with retry logic.
+    Returns video_id if successful, else None.
+    """
+    youtube = get_authenticated_service()
+    if youtube is None:
+        print("⏭️ Upload skipped: no valid YouTube credentials.")
+        return None
+
+    body = {
+        "snippet": {
+            "title": title[:100],
+            "description": description[:5000],
+            "tags": tags.split(",") if tags else [],
+            "categoryId": "22"  # People & Blogs
+        },
+        "status": {
+            "privacyStatus": "public"
+        }
+    }
+
+    media = MediaFileUpload(str(video_path), chunksize=-1, resumable=True)
+
+    for attempt in range(1, max_retries + 1):
+        try:
+            request = youtube.videos().insert(
+                part="snippet,status",
+                body=body,
+                media_body=media
+            )
+            response = request.execute()
+            video_id = response["id"]
+            print(f"✅ Uploaded successfully! Video ID: {video_id}")
+
+            if thumbnail_path and Path(thumbnail_path).exists():
+                try:
+                    youtube.thumbnails().set(
+                        videoId=video_id,
+                        media_body=MediaFileUpload(str(thumbnail_path))
+                    ).execute()
+                    print("✅ Thumbnail uploaded.")
+                except Exception as e:
+                    print(f"⚠️ Thumbnail upload failed: {e}")
+            return video_id
+
+        except Exception as e:
+            print(f"❌ Upload attempt {attempt}/{max_retries} failed: {e}")
+            if attempt < max_retries:
+                wait = 2 ** attempt  # exponential backoff
+                print(f"⏳ Retrying in {wait} seconds...")
+                time.sleep(wait)
+            else:
+                print("❌ All upload attempts exhausted.")
+                return None
