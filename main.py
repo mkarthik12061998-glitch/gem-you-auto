@@ -48,7 +48,6 @@ def update_content_plan(plan):
         json.dump(plan, f, indent=2)
 
 
-
 def produce_lesson_videos(lesson):
     print(f"\n▶️ Starting production for Lesson: '{lesson['title']}'")
     chapter_safe = re.sub(r'[^\w]', '_', str(lesson['chapter'])).strip('_')
@@ -99,9 +98,8 @@ def produce_lesson_videos(lesson):
     )
 
     print("\n--- Producing Short Video ---")
-    # short_script = f"{lesson_content['short_form_highlight']}"
     short_script = (f"{lesson_content['short_form_highlight']}\n\n"
-    f"Link to the full lesson is in the description below.")
+                    f"Link to the full lesson is in the description below.")
     short_audio_mp3_path = OUTPUT_DIR / f"short_audio_{unique_id}.mp3"
     short_audio_path = text_to_speech(short_script, short_audio_mp3_path)
 
@@ -128,18 +126,23 @@ def produce_lesson_videos(lesson):
         thumbnail_title=f"Quick Tip: {lesson['title']}"
     )
 
+    # ------------------ UPLOAD WITH GRACEFUL HANDLING ------------------
     print("\n📤 Uploading to YouTube...")
     hashtags = lesson_content.get("hashtags", "#AI #Developer #LearnAI")
     long_desc = f"Part of the 'AI for Developers' series by {YOUR_NAME}.\n\nToday's Lesson: {lesson['title']}\n\n{hashtags}"
     long_tags = "AI, Artificial Intelligence, Developer, Programming, Tutorial, " + lesson['title'].replace(" ", ", ")
 
-    long_video_id = upload_to_youtube(
-        long_video_path,
-        lesson['title'],
-        long_desc,
-        long_tags,
-        long_thumb_path
-    )
+    long_video_id = None
+    try:
+        long_video_id = upload_to_youtube(
+            long_video_path,
+            lesson['title'],
+            long_desc,
+            long_tags,
+            long_thumb_path
+        )
+    except Exception as e:
+        print(f"⚠️ Long video upload failed (continuing): {e}")
 
     if long_video_id:
         print("⏳ Waiting 30 seconds before uploading the short...")
@@ -148,19 +151,23 @@ def produce_lesson_videos(lesson):
         if not highlight:
             highlight = f"AI Quick Tip: {lesson['title']}"
         short_title = f"{highlight[:90].rstrip()} #Shorts"
-        # short_desc = f"Watch the full lesson with {YOUR_NAME} here: https://www.youtube.com/watch?v={long_video_id}\n\n#AI #Programming #Tech #Developer"
         short_desc = (f"{lesson_content['short_form_highlight']}\n\n"
                       f"Watch the full lesson with {YOUR_NAME} here: https://www.youtube.com/watch?v={long_video_id}\n\n"
                       f"{hashtags}")
-        upload_to_youtube(
-            short_video_path,
-            short_title.strip(),
-            short_desc,
-            "AI,Shorts,TechTip",
-            short_thumb_path
-        )
-        return long_video_id
-    return None
+        try:
+            upload_to_youtube(
+                short_video_path,
+                short_title.strip(),
+                short_desc,
+                "AI,Shorts,TechTip",
+                short_thumb_path
+            )
+        except Exception as e:
+            print(f"⚠️ Short video upload failed (continuing): {e}")
+    else:
+        print("⚠️ Skipping short upload because long video upload failed.")
+
+    return long_video_id  # may be None
 
 
 def main():
@@ -176,9 +183,8 @@ def main():
 
         if not pending:
             print("🎉 All lessons produced! Generating new content plan to restart from scratch...")
-
             previous_titles = [lesson['title'] for lesson in plan['lessons']]
-            new_plan = generate_curriculum(previous_titles=previous_titles)  # 🔁 Pass prior titles
+            new_plan = generate_curriculum(previous_titles=previous_titles)
             update_content_plan(new_plan)
             plan = new_plan
             pending = [(i, lesson) for i, lesson in enumerate(new_plan['lessons']) if lesson['status'] == 'pending']
@@ -190,18 +196,16 @@ def main():
         for lesson_index, lesson in pending[:LESSONS_PER_RUN]:
             try:
                 video_id = produce_lesson_videos(lesson)
-                if video_id:
-                    for original_lesson in plan['lessons']:
-                        if original_lesson['title'].strip().lower() == lesson['title'].strip().lower():
-                            original_lesson['status'] = 'complete'
+                # Mark lesson as complete regardless of upload success (videos are generated)
+                for original_lesson in plan['lessons']:
+                    if original_lesson['title'].strip().lower() == lesson['title'].strip().lower():
+                        original_lesson['status'] = 'complete'
+                        if video_id:
                             original_lesson['youtube_id'] = video_id
-                            print(f"✅ Completed lesson: {lesson['title']}")
-                            break
-                    else:
-                        print(f"⚠️ Could not find lesson in plan to mark as complete: {lesson['title']}")
+                        print(f"✅ Completed lesson: {lesson['title']}")
+                        break
                 else:
-                    print(f"❌ Upload failed (no video ID returned): {lesson['title']}")
-                    failed_lessons.append(lesson['title'])
+                    print(f"⚠️ Could not find lesson in plan to mark as complete: {lesson['title']}")
             except Exception as e:
                 print(f"❌ Failed producing lesson: {lesson['title']}")
                 traceback.print_exc()
@@ -227,6 +231,7 @@ def main():
             print(f"🧹 Deleted: {file}")
     except Exception as e:
         print(f"⚠️ Could not clean up .wav files: {e}")
+
 
 if __name__ == "__main__":
     main()
