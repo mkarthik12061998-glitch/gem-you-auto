@@ -1,84 +1,144 @@
 {
-  "topics": [
+  "lessons": [
     {
-      "topic": "The 4 Attachment Styles — Which One Are You? (Psychology Explained)",
-      "status": "pending"
+      "chapter": 1,
+      "part": 1,
+      "title": "Traditional Code vs. AI: The Chef and the Recipe",
+      "status": "complete",
+      "youtube_id": null
     },
     {
-      "topic": "Why You Procrastinate (And How to Stop) — The Psychology Behind It",
-      "status": "pending"
+      "chapter": 1,
+      "part": 2,
+      "title": "How LLMs Think: The World's Most Advanced Auto-Complete",
+      "status": "pending",
+      "youtube_id": null
     },
     {
-      "topic": "Introvert vs Extrovert — The Science Behind Your Personality",
-      "status": "pending"
+      "chapter": 1,
+      "part": 3,
+      "title": "Prompt Engineering Basics: Managing an AI Intern with System Prompts",
+      "status": "pending",
+      "youtube_id": null
     },
     {
-      "topic": "What Your Anger Is Really Trying to Tell You (Psychology Facts)",
-      "status": "pending"
+      "chapter": 1,
+      "part": 4,
+      "title": "Embeddings & Vector Databases: Creating a GPS for Words and Meaning",
+      "status": "pending",
+      "youtube_id": null
     },
     {
-      "topic": "The Psychology of People-Pleasing — Why You Do It and How to Stop",
-      "status": "pending"
+      "chapter": 2,
+      "part": 5,
+      "title": "Retrieval-Augmented Generation (RAG): Giving Your AI an Open-Book Exam",
+      "status": "pending",
+      "youtube_id": null
     },
     {
-      "topic": "10 Signs of a Toxic Relationship — Psychology Facts You Need to Know",
-      "status": "pending"
+      "chapter": 2,
+      "part": 6,
+      "title": "Chunking Strategies & Vector Search: Cutting Books into Smart Flashcards",
+      "status": "pending",
+      "youtube_id": null
     },
     {
-      "topic": "How to Set Boundaries With Family (Without Feeling Guilty) — Psychology Tips",
-      "status": "pending"
+      "chapter": 2,
+      "part": 7,
+      "title": "Structured Outputs & Function Calling: Teaching AI to Fill Out Forms",
+      "status": "pending",
+      "youtube_id": null
     },
     {
-      "topic": "Why You Attract the Wrong Partners — Relationship Psychology Explained",
-      "status": "pending"
+      "chapter": 2,
+      "part": 8,
+      "title": "Intro to AI Agents & Tools: Giving Hands and a Calculator to a Brain",
+      "status": "pending",
+      "youtube_id": null
     },
     {
-      "topic": "The Psychology of Arranged Marriages — Indian Context Explained",
-      "status": "pending"
+      "chapter": 3,
+      "part": 9,
+      "title": "Agent Loops & Reasoning: The Plan-Do-Check Cycle for AI",
+      "status": "pending",
+      "youtube_id": null
     },
     {
-      "topic": "Love Languages Explained Simply — The Psychology of How We Give and Receive Love",
-      "status": "pending"
+      "chapter": 3,
+      "part": 10,
+      "title": "Stateful AI Workflows with LangGraph: Designing Assembly Lines for Agents",
+      "status": "pending",
+      "youtube_id": null
     },
     {
-      "topic": "Dark Psychology Tricks Manipulators Use — How to Protect Yourself",
-      "status": "pending"
+      "chapter": 3,
+      "part": 11,
+      "title": "Multi-Agent Orchestration: Building a Digital Software Development Team",
+      "status": "pending",
+      "youtube_id": null
     },
     {
-      "topic": "The Science of Persuasion — Why You Agree Before Your Brain Finishes Thinking",
-      "status": "pending"
+      "chapter": 3,
+      "part": 12,
+      "title": "AI Memory Systems: Short-Term Notebooks vs. Long-Term Personal Journals",
+      "status": "pending",
+      "youtube_id": null
     },
     {
-      "topic": "Dopamine, Discipline, and Motivation — The Brain's Secret to Success",
-      "status": "pending"
+      "chapter": 4,
+      "part": 13,
+      "title": "Inside the Transformer Engine: The Self-Attention Mechanism Explained",
+      "status": "pending",
+      "youtube_id": null
     },
     {
-      "topic": "Why Your Brain Wants You to Stay Comfortable (And How to Break Free)",
-      "status": "pending"
+      "chapter": 4,
+      "part": 14,
+      "title": "Tokenization & Positional Encoding: How Words Become Numbers and Coordinates",
+      "status": "pending",
+      "youtube_id": null
     },
     {
-      "topic": "How to Read People — 5 Psychology Tricks That Actually Work",
-      "status": "pending"
+      "chapter": 4,
+      "part": 15,
+      "title": "Fine-Tuning vs. RAG vs. Prompting: Schooling, Textbooks, or Quick Advice?",
+      "status": "pending",
+      "youtube_id": null
     },
     {
-      "topic": "Why Willpower Doesn't Exist — The Neuroscience of Self-Control",
-      "status": "pending"
+      "chapter": 4,
+      "part": 16,
+      "title": "Efficient Model Customization: Fine-Tuning LLMs with PEFT and LoRA",
+      "status": "pending",
+      "youtube_id": null
     },
     {
-      "topic": "Ego, Identity, and Self-Control — The Hidden Battle in Your Brain",
-      "status": "pending"
+      "chapter": 5,
+      "part": 17,
+      "title": "Reinforcement Learning & RLHF: Training AI with Treats, Rewards, and Corrections",
+      "status": "pending",
+      "youtube_id": null
     },
     {
-      "topic": "Mental Clarity: How to Stop Overthinking and Find Peace — Brain Science",
-      "status": "pending"
+      "chapter": 5,
+      "part": 18,
+      "title": "Advanced AI Reasoning: Chain-of-Thought, Tree-of-Thought, and Search",
+      "status": "pending",
+      "youtube_id": null
     },
     {
-      "topic": "Why You Self-Sabotage (And How to Stop) — The Psychology of Self-Destruction",
-      "status": "pending"
+      "chapter": 5,
+      "part": 19,
+      "title": "AI Security & Guardrails: Hiring Bouncers for Prompt Injection Attacks",
+      "status": "pending",
+      "youtube_id": null
     },
     {
-      "topic": "The 2-Minute Rule for Productivity — Psychology Explained",
-      "status": "pending"
+      "chapter": 5,
+      "part": 20,
+      "title": "Production AI Architecture: Blueprinting Enterprise-Grade AI Systems",
+      "status": "pending",
+      "youtube_id": null
     }
   ]
 }
