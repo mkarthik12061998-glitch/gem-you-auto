@@ -1,143 +1,143 @@
 {
   "lessons": [
     {
-      "chapter": 1,
-      "part": 1,
-      "title": "Traditional Code vs. AI: The Chef and the Recipe",
+      "chapter": 21,
+      "part": "Part 5: Multimodal & Edge AI",
+      "title": "Multimodal AI: Giving Sight and Hearing to a Text-Only Brain",
       "status": "complete",
       "youtube_id": null
     },
     {
-      "chapter": 1,
-      "part": 2,
-      "title": "How LLMs Think: The World's Most Advanced Auto-Complete",
-      "status": "complete",
+      "chapter": 22,
+      "part": "Part 5: Multimodal & Edge AI",
+      "title": "Small Language Models & Local LLMs: Fitting a Genius into Your Pocket",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 1,
-      "part": 3,
-      "title": "Prompt Engineering Basics: Managing an AI Intern with System Prompts",
-      "status": "complete",
+      "chapter": 23,
+      "part": "Part 6: Advanced Retrieval & Knowledge Systems",
+      "title": "Hybrid Search & Re-Ranking: Combining Exact Keywords with Deep Meaning",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 1,
-      "part": 4,
-      "title": "Embeddings & Vector Databases: Creating a GPS for Words and Meaning",
-      "status": "complete",
+      "chapter": 24,
+      "part": "Part 6: Advanced Retrieval & Knowledge Systems",
+      "title": "GraphRAG & Knowledge Graphs: Building a Detective's Pinboard for AI",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 2,
-      "part": 5,
-      "title": "Retrieval-Augmented Generation (RAG): Giving Your AI an Open-Book Exam",
-      "status": "complete",
+      "chapter": 25,
+      "part": "Part 6: Advanced Retrieval & Knowledge Systems",
+      "title": "Advanced RAG Optimization: HyDE and Query Rewriting Techniques",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 2,
-      "part": 6,
-      "title": "Chunking Strategies & Vector Search: Cutting Books into Smart Flashcards",
-      "status": "complete",
+      "chapter": 26,
+      "part": "Part 7: LLMOps, Observability & Quality",
+      "title": "LLMOps & AI Observability: Flight Recorders for Your AI Application",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 2,
-      "part": 7,
-      "title": "Structured Outputs & Function Calling: Teaching AI to Fill Out Forms",
-      "status": "complete",
+      "chapter": 27,
+      "part": "Part 7: LLMOps, Observability & Quality",
+      "title": "LLM Evaluation & AI-as-a-Judge: Automated Grading for Model Responses",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 2,
-      "part": 8,
-      "title": "Intro to AI Agents & Tools: Giving Hands and a Calculator to a Brain",
-      "status": "complete",
+      "chapter": 28,
+      "part": "Part 7: LLMOps, Observability & Quality",
+      "title": "Streaming & Async AI: Fast-Food Service for Real-Time User Interfaces",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 3,
-      "part": 9,
-      "title": "Agent Loops & Reasoning: The Plan-Do-Check Cycle for AI",
-      "status": "complete",
+      "chapter": 29,
+      "part": "Part 8: Model Optimization & Training Secrets",
+      "title": "KV Caching & Context Management: Remembering Long Conversations Without Re-Reading",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 3,
-      "part": 10,
-      "title": "Stateful AI Workflows with LangGraph: Designing Assembly Lines for Agents",
-      "status": "complete",
+      "chapter": 30,
+      "part": "Part 8: Model Optimization & Training Secrets",
+      "title": "Synthetic Data Generation: Building Flight Simulators for AI Training",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 3,
-      "part": 11,
-      "title": "Multi-Agent Orchestration: Building a Digital Software Development Team",
-      "status": "complete",
+      "chapter": 31,
+      "part": "Part 8: Model Optimization & Training Secrets",
+      "title": "Model Distillation: Condensing a University Degree into a Pocket Guide",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 3,
-      "part": 12,
-      "title": "AI Memory Systems: Short-Term Notebooks vs. Long-Term Personal Journals",
-      "status": "complete",
+      "chapter": 32,
+      "part": "Part 9: Advanced Agent Patterns & Safety",
+      "title": "Agentic Web Search & Browsing: Sending a Research Assistant to the Internet",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 4,
-      "part": 13,
-      "title": "Inside the Transformer Engine: The Self-Attention Mechanism Explained",
-      "status": "complete",
+      "chapter": 33,
+      "part": "Part 9: Advanced Agent Patterns & Safety",
+      "title": "Human-in-the-Loop (HITL): Installing Speed Bumps for Critical AI Decisions",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 4,
-      "part": 14,
-      "title": "Tokenization & Positional Encoding: How Words Become Numbers and Coordinates",
-      "status": "complete",
+      "chapter": 34,
+      "part": "Part 9: Advanced Agent Patterns & Safety",
+      "title": "Reasoning Models & Test-Time Compute: Thinking on a Scratchpad Before Speaking",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 4,
-      "part": 15,
-      "title": "Fine-Tuning vs. RAG vs. Prompting: Schooling, Textbooks, or Quick Advice?",
-      "status": "complete",
+      "chapter": 35,
+      "part": "Part 10: Production Performance & Cost Control",
+      "title": "Edge AI & On-Device Processing: Running AI on Offline GPS Navigation",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 4,
-      "part": 16,
-      "title": "Efficient Model Customization: Fine-Tuning LLMs with PEFT and LoRA",
-      "status": "complete",
+      "chapter": 36,
+      "part": "Part 10: Production Performance & Cost Control",
+      "title": "Token Optimization & Cost Reduction: Smart Budgeting for Your Cloud Bills",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 5,
-      "part": 17,
-      "title": "Reinforcement Learning & RLHF: Training AI with Treats, Rewards, and Corrections",
-      "status": "complete",
+      "chapter": 37,
+      "part": "Part 10: Production Performance & Cost Control",
+      "title": "Dynamic Tool Routing & Planning: Mastering the Master Toolbox",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 5,
-      "part": 18,
-      "title": "Advanced AI Reasoning: Chain-of-Thought, Tree-of-Thought, and Search",
-      "status": "complete",
+      "chapter": 38,
+      "part": "Part 11: Real-World Applications & Capstones",
+      "title": "Code Generation Agents: AI Apprentices that Write, Test, and Patch Code",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 5,
-      "part": 19,
-      "title": "AI Security & Guardrails: Hiring Bouncers for Prompt Injection Attacks",
-      "status": "complete",
+      "chapter": 39,
+      "part": "Part 11: Real-World Applications & Capstones",
+      "title": "Continuous Fine-Tuning & Model Drift: Updating Yesterday's AI with Today's News",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 5,
-      "part": 20,
-      "title": "Production AI Architecture: Blueprinting Enterprise-Grade AI Systems",
-      "status": "complete",
+      "chapter": 40,
+      "part": "Part 11: Real-World Applications & Capstones",
+      "title": "Enterprise Capstone: Grand Opening of a Production-Grade Autonomous AI Factory",
+      "status": "pending",
       "youtube_id": null
     }
   ]
