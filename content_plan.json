@@ -1,143 +1,143 @@
 {
   "lessons": [
     {
-      "chapter": 21,
-      "part": "Part 5: Multimodal & Edge AI",
-      "title": "Multimodal AI: Giving Sight and Hearing to a Text-Only Brain",
+      "chapter": "AI Foundations & Core Mechanics",
+      "part": "Deep Dive into Transformers",
+      "title": "Attention Mechanism & Transformers: How AI Pays Attention like a Selective Listener",
       "status": "complete",
       "youtube_id": null
     },
     {
-      "chapter": 22,
-      "part": "Part 5: Multimodal & Edge AI",
-      "title": "Small Language Models & Local LLMs: Fitting a Genius into Your Pocket",
-      "status": "complete",
+      "chapter": "AI Foundations & Core Mechanics",
+      "part": "Embeddings & Vector Space",
+      "title": "Vector Embeddings & Vector Databases: Organizing Ideas in a 3D Library of Meaning",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 23,
-      "part": "Part 6: Advanced Retrieval & Knowledge Systems",
-      "title": "Hybrid Search & Re-Ranking: Combining Exact Keywords with Deep Meaning",
-      "status": "complete",
+      "chapter": "AI Security & Guardrails",
+      "part": "AI Safety & Red Teaming",
+      "title": "Prompt Injection & AI Security: Locking the Doors Against Digital Hypnotists",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 24,
-      "part": "Part 6: Advanced Retrieval & Knowledge Systems",
-      "title": "GraphRAG & Knowledge Graphs: Building a Detective's Pinboard for AI",
-      "status": "complete",
+      "chapter": "Advanced Agentic Systems",
+      "part": "Multi-Agent Frameworks & LangGraph",
+      "title": "Multi-Agent Orchestration & LangGraph: Conducting an Orchestrated Symphony of AI Assistants",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 25,
-      "part": "Part 6: Advanced Retrieval & Knowledge Systems",
-      "title": "Advanced RAG Optimization: HyDE and Query Rewriting Techniques",
-      "status": "complete",
+      "chapter": "Advanced Agentic Systems",
+      "part": "Long-Term Memory Architectures",
+      "title": "Agentic Memory Systems: Giving AI a Brain with Short-Term and Long-Term Filing Cabinets",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 26,
-      "part": "Part 7: LLMOps, Observability & Quality",
-      "title": "LLMOps & AI Observability: Flight Recorders for Your AI Application",
-      "status": "complete",
+      "chapter": "Model Alignment & Reinforcement Learning",
+      "part": "RLHF & Direct Preference Optimization",
+      "title": "RLHF & DPO: Teaching AI Good Manners with Gold Stars and Helpful Feedback",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 27,
-      "part": "Part 7: LLMOps, Observability & Quality",
-      "title": "LLM Evaluation & AI-as-a-Judge: Automated Grading for Model Responses",
-      "status": "complete",
+      "chapter": "Structured Outputs & Tool Integration",
+      "part": "Schema Enforcement & APIs",
+      "title": "Structured Outputs & Function Calling: Teaching AI to Speak Fluent JSON and Follow Rules",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 28,
-      "part": "Part 7: LLMOps, Observability & Quality",
-      "title": "Streaming & Async AI: Fast-Food Service for Real-Time User Interfaces",
-      "status": "complete",
+      "chapter": "Model Fine-Tuning Internals",
+      "part": "Parameter-Efficient Fine-Tuning",
+      "title": "LoRA & QLoRA: Customizing Huge AI Models by Adding Sticky Notes Instead of Rewriting the Book",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 29,
-      "part": "Part 8: Model Optimization & Training Secrets",
-      "title": "KV Caching & Context Management: Remembering Long Conversations Without Re-Reading",
-      "status": "complete",
+      "chapter": "Multimodal Deep Dive",
+      "part": "Vision Transformers & Diffusion",
+      "title": "Vision Transformers & Image Generation: How AI Paints Pictures from Words like a Digital Artist",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 30,
-      "part": "Part 8: Model Optimization & Training Secrets",
-      "title": "Synthetic Data Generation: Building Flight Simulators for AI Training",
-      "status": "complete",
+      "chapter": "Multimodal Deep Dive",
+      "part": "Real-Time Voice AI",
+      "title": "Real-Time Voice AI & Speech Pipelines: Building Voice Assistants that Listen and Talk Without Stuttering",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 31,
-      "part": "Part 8: Model Optimization & Training Secrets",
-      "title": "Model Distillation: Condensing a University Degree into a Pocket Guide",
-      "status": "complete",
+      "chapter": "AI Architecture & Hardware Optimization",
+      "part": "Attention & Speed Optimizations",
+      "title": "FlashAttention & Quantization: Shrinking Big Math so AI Responds at Lightning Speed",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 32,
-      "part": "Part 9: Advanced Agent Patterns & Safety",
-      "title": "Agentic Web Search & Browsing: Sending a Research Assistant to the Internet",
-      "status": "complete",
+      "chapter": "Agentic Standards & Ecosystems",
+      "part": "Open Protocols & Tooling",
+      "title": "Model Context Protocol (MCP): Building Universal USB Ports for AI Tools and Data",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 33,
-      "part": "Part 9: Advanced Agent Patterns & Safety",
-      "title": "Human-in-the-Loop (HITL): Installing Speed Bumps for Critical AI Decisions",
-      "status": "complete",
+      "chapter": "Reinforcement Learning Foundations",
+      "part": "Decision-Making Algorithms",
+      "title": "Reinforcement Learning Fundamentals: Training AI Like a Dog Learning New Tricks through Rewards",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 34,
-      "part": "Part 9: Advanced Agent Patterns & Safety",
-      "title": "Reasoning Models & Test-Time Compute: Thinking on a Scratchpad Before Speaking",
-      "status": "complete",
+      "chapter": "Context Window Scaling",
+      "part": "Long Context & Attention Extensions",
+      "title": "Rotary Position Embeddings & Long Context: Finding a Lost Needle in a Mountain of Books",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 35,
-      "part": "Part 10: Production Performance & Cost Control",
-      "title": "Edge AI & On-Device Processing: Running AI on Offline GPS Navigation",
-      "status": "complete",
+      "chapter": "Advanced Prompting & Reasoning",
+      "part": "Structured Thinking Frameworks",
+      "title": "Chain-of-Thought & Tree-of-Thoughts: Teaching AI to Draw Mind Maps Before Answering",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 36,
-      "part": "Part 10: Production Performance & Cost Control",
-      "title": "Token Optimization & Cost Reduction: Smart Budgeting for Your Cloud Bills",
-      "status": "complete",
+      "chapter": "Data Engineering for AI",
+      "part": "Dataset Curation & Quality",
+      "title": "Dataset Engineering & Data Washing: Sorting Clean Ingredients Before Cooking AI Models",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 37,
-      "part": "Part 10: Production Performance & Cost Control",
-      "title": "Dynamic Tool Routing & Planning: Mastering the Master Toolbox",
-      "status": "complete",
+      "chapter": "Multimodal Agents",
+      "part": "Vision-Language-Action Models",
+      "title": "Vision-Language-Action Models: Giving AI Hands and Eyes to Interact with Computer Screens",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 38,
-      "part": "Part 11: Real-World Applications & Capstones",
-      "title": "Code Generation Agents: AI Apprentices that Write, Test, and Patch Code",
-      "status": "complete",
+      "chapter": "Advanced Vector Retrieval",
+      "part": "Dense & Sparse Hybrid Systems",
+      "title": "SPLADE & ColBERT: Fine-Grained Search Mechanics that Read Between the Lines",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 39,
-      "part": "Part 11: Real-World Applications & Capstones",
-      "title": "Continuous Fine-Tuning & Model Drift: Updating Yesterday's AI with Today's News",
-      "status": "complete",
+      "chapter": "AI System Architecture",
+      "part": "Enterprise System Blueprints",
+      "title": "Enterprise AI System Design: Building High-Traffic, Fault-Tolerant AI Engines",
+      "status": "pending",
       "youtube_id": null
     },
     {
-      "chapter": 40,
-      "part": "Part 11: Real-World Applications & Capstones",
-      "title": "Enterprise Capstone: Grand Opening of a Production-Grade Autonomous AI Factory",
-      "status": "complete",
+      "chapter": "Next-Gen AI Architectures",
+      "part": "Beyond Transformers",
+      "title": "Mamba & State Space Models: Building the Next Generation of AI Beyond Attention Limits",
+      "status": "pending",
       "youtube_id": null
     }
   ]
