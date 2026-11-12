@@ -53,7 +53,7 @@
       "chapter": "Model Fine-Tuning Internals",
       "part": "Parameter-Efficient Fine-Tuning",
       "title": "LoRA & QLoRA: Customizing Huge AI Models by Adding Sticky Notes Instead of Rewriting the Book",
-      "status": "pending",
+      "status": "complete",
       "youtube_id": null
     },
     {
