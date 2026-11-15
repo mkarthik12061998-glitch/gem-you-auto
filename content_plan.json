@@ -74,7 +74,7 @@
       "chapter": "AI Architecture & Hardware Optimization",
       "part": "Attention & Speed Optimizations",
       "title": "FlashAttention & Quantization: Shrinking Big Math so AI Responds at Lightning Speed",
-      "status": "pending",
+      "status": "complete",
       "youtube_id": null
     },
     {
